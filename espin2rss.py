@@ -70,7 +70,7 @@ def getRss(author, desk):
         rss = esRss(title=getTitle(content), link=url, description=getDescription(content))
         pins = getPins(content)
         for p in pins:
-            description = "<h3>%s</h3><br><br><a href=\"%s\"><img src=\"%s\"></a>" % (p['title'], p['url'], p['img'])
+            description = "<h3>%s</h3><br><a href=\"%s\"><img src=\"%s\"></a>" % (p['title'], p['url'], p['img'])
             rss.addItem(title=p['title'], description=description, link=p['url'], guid=p['url'],
                         guid_isPermaLink='true')
         response.headers['Content-Type'] = 'xml/application'
