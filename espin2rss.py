@@ -67,7 +67,7 @@ def getRss(author, desk):
     if author and desk:
         url = 'https://ru.pinterest.com/%s/%s/' % (author, desk)
         content = getContent(url)
-        rss = esRss(title=getTitle(content), link=url, description=getDescription(content))
+        rss = esRss(title=author + ' - ' + getTitle(content), link=url, description=getDescription(content))
         pins = getPins(content)
         for p in pins:
             description = "<h3>%s</h3><br><a href=\"%s\"><img src=\"%s\"></a>" % (p['title'], p['url'], p['img'])
